@@ -18,5 +18,5 @@ If others wish to use this utility for their RegOnline attendee exports to creat
 
 Contributers / Helpers
 ======================
-*[Laura Trevisan](http://ltrevisan.net/) - [github](/ljtrevisan/)
-*[GLSEC - Software GR](http://glsec.org/)
+* [Laura Trevisan](http://ltrevisan.net/) - [github](/ljtrevisan/)
+* [GLSEC - Software GR](http://glsec.org/)

@@ -1,0 +1,10 @@
+%h1 Convert RegOnline .csv file
+
+%p WARNING! You MUST open the .xls file that you export and resave as a .csv file. I did not want to use very many external libraries for this quick "work around" utility. I'll add file support later.
+
+%form{:action => "/upload", :method => :post}
+	%input{:type => :file, :name => "file"}
+	%br
+	%input{:type => :submit, :value => "Convert"}
+
+%p Once you hit "Convert," an export.csv file will automatically be downloaded for your use. Nothing will be stored on the server.

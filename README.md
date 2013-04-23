@@ -15,3 +15,8 @@ So rather than creating the list by hand, I thought a simple utility - even if s
 Future
 ------
 If others wish to use this utility for their RegOnline attendee exports to create custom spreadsheets/csv's, just inbox me and I will put it in my queue.
+
+Contributers / Helpers
+======================
+[Laura Trevisan](http://ltrevisan.net/) - [github](/ljtrevisan/)
+[GLSEC - Software GR](http://glsec.org/)

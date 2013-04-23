@@ -1,0 +1,6 @@
+Vagrantfile
+Vagrant.sh
+.vagrant
+
+.htaccess
+tmp/

@@ -1,4 +1,3 @@
-require 'csv'
 require './config/setup.rb'
 
 get '/' do

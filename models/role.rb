@@ -10,6 +10,7 @@ class Role
 			"Student" => "Attendee",
 			"Mod" => "Moderator",
 			"Board Member" => "GLSEC Organizing Committee",
+			"Board" => "GLSEC Organizing Committee",
 			"Volunteer" => "Volunteer",
 			"Keynote" => "Keynote Speaker"
 		}

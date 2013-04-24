@@ -9,8 +9,4 @@ class GfileUtils
 	def parse
 		csv = CSV.parse(@file, :headers => true)
 	end
-
-	def export(parsed)
-		
-	end
 end

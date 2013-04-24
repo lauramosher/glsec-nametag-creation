@@ -9,7 +9,7 @@ class Role
 			"Speaker" => "Speaker",
 			"Student" => "Attendee",
 			"Mod" => "Moderator",
-			"Board" => "GLSEC Organizing Committee",
+			"Board Member" => "GLSEC Organizing Committee",
 			"Volunteer" => "Volunteer",
 			"Keynote" => "Keynote Speaker"
 		}
@@ -22,24 +22,13 @@ class Role
 			"Geer, Rob",
 			"Fernando, Christian"
 		]
-
-		@committee = [
-			"DuBois, Casey",
-			"Jorgenson, Paul",
-			"Rumery, John",
-			"Erickson, Carl",
-			"Bailey, Patrick",
-			"Nandigam, Jagadeesh"
-		]
 	end
 
 	# Finds GLSEC role for Name Tag based on Registration Type from RegOnline and
 	# Concatenated Last Name, First Name.
 	# If I do this later, I'll use RegOnline's registrant ID for truly unique mappings.
 	def getRole(name, role)
-		if @committee.include?(name)
-			role = "Board"
-		elsif @moderators.include?(name)
+		if @moderators.include?(name)
 			role = "Mod"
 		elsif @keynote.include?(name)
 			role = "Keynote"

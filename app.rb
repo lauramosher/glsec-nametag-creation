@@ -19,8 +19,24 @@ post '/upload' do
 
 	gfu = GfileUtils.new(tmpfile)
 	parsed_file = gfu.parse
-	export = gfu.export(parsed_file)
+	CSV.open("#{File.dirname(__FILE__)}/tmp/export.csv", "wb") do |c|
+		c << ["First Name", "Last Name", "Organization", "Role"]
+		parsed_file.each do |row|
+			data = []
 
-	send_file "./tmp/export.csv", :filename => "export.csv"
+			data << row[4].split(",")[1].strip
+			data << row[4].split(",")[0].strip
+			data << row[2]
+
+			roles = Role.new
+			data << roles.getRole(row[4],row[0])
+
+
+			c << data
+		end
+	end
+
+		send_file "#{File.dirname(__FILE__)}/tmp/export.csv", :filename => "export.csv"
+
 	haml :index
 end

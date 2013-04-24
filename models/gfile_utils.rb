@@ -7,6 +7,6 @@ class GfileUtils
 	end
 
 	def parse
-		csv = CSV.parse(@file, :headers => true)
+		csv = CSV.parse(@file, {:headers => true, :col_sep => ","})
 	end
 end

@@ -11,10 +11,14 @@
 	%form{:action => "/export.csv", :method => :post, :enctype=>"multipart/form-data", :class => "form-horizontal"}
 
 		.control-group
-			.control-label
-				RegOnline Export (converted to .csv)
+			%label{:for => "file", :class => "control-label"} RegOnline Export (converted to .csv)
 			.controls
 				%input{:type => :file, :name => "file"}
 		.control-group
 			.controls
 				%input{:type => :submit, :value => "Convert"}
+
+
+%form{:action => "/export.csv", :method => :post, :enctype=>"multipart/form-data"}
+	%input{:type => :file, :name => "file"}
+	%input{:type => :submit, :value => "Convert"}

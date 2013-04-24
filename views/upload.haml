@@ -2,16 +2,15 @@
 
 %p WARNING! You MUST open the .xls file that you export and resave as a .csv file. I did not want to use very many external libraries for this quick "work around" utility. I'll add file support later.
 
-%form{:action => "/export.csv", :method => :post, :enctype=>"multipart/form-data"}
+%form{:action => "/export.csv", :method => :post, :enctype=>"multipart/form-data", :class => "form-horizontal"}
 
-	%table.form
-		%tr
-			%td RegOnline Export (converted to .csv)
-			%td
-				%input{:type => :file, :name => "file"}
-		%tr
-			%td
-			%td
-				%input{:type => :submit, :value => "Convert"}
+	.control-group
+		.control-label
+			RegOnline Export (converted to .csv)
+		.controls
+			%input{:type => :file, :name => "file"}
+	.control-group
+		.controls
+			%input{:type => :submit, :value => "Convert"}
 
 %p Once you hit "Convert," an export.csv file will automatically be downloaded for your use. Nothing will be stored on the server.

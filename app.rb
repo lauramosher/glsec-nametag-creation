@@ -13,5 +13,14 @@ get '/upload' do
 end
 
 post '/upload' do
-	# To Do
+	unless params[:file] && (tmpfile = params[:file][:tempfile])
+		return haml :upload
+	end
+
+	gfu = GfileUtils.new(tmpfile)
+	parsed_file = gfu.parse
+	export = gfu.export(parsed_file)
+
+	send_file "./tmp/export.csv", :filename => "export.csv"
+	haml :index
 end

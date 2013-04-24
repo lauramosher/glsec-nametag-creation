@@ -12,14 +12,14 @@ get '/upload' do
 	haml :upload
 end
 
-post '/upload' do
+post '/export.csv' do
 	unless params[:file] && (tmpfile = params[:file][:tempfile])
 		return haml :upload
 	end
 
 	gfu = GfileUtils.new(tmpfile)
 	parsed_file = gfu.parse
-	CSV.open("#{File.dirname(__FILE__)}/tmp/export.csv", "wb") do |c|
+	csv = CSV.generate do |c|
 		c << ["First Name", "Last Name", "Organization", "Role"]
 		parsed_file.each do |row|
 			data = []
@@ -36,7 +36,6 @@ post '/upload' do
 		end
 	end
 
-		send_file "#{File.dirname(__FILE__)}/tmp/export.csv", :filename => "export.csv"
-
-	haml :index
+	content_type "application/csv"
+	csv
 end

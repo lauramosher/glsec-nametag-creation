@@ -3,11 +3,15 @@
 	%head
 		%title= "ltrevisan.net | #{@title}"
 		%meta{ :name => "viewport", :content=>"width=device-width, initial-scale=1.0"}
-		%link{ :href => url_for('/libs/bootstrap/css/bootstrap.css'), :rel => 'stylesheet', :type => 'text/css' }
-		%link{ :href => url_for('/css/main.css'), :rel => 'stylesheet', :type => 'text/css' }
-		%link{ :href => url_for('/favicon.ico'), :rel => "icon"}
+		%link{ :href => url_for('/libs/bootstrap/css/bootstrap.min.css'), :rel => 'stylesheet', :type => 'text/css' }
 	%body
+		.navbar.navbar-fixed-top
+			.navbar-inner
+				.container
+					%a{:href => url_for('/')}.brand GLSEC Name Tag Conversion Tool
+					%ul.nav
+						%li
+							%a{:href => url_for('/upload')} Upload File
 		.container
-			.row-fluid
-				= yield
+			= yield
 	
